@@ -34,7 +34,7 @@ function App() {
           <Route path ='/about' component = {About}  />
           <Route path = '/beats' component = {Beats} />
           <Route path = '/songs' > {user ? <Songs/> : <Register/> }  </Route> 
-          <Route path = '/login' component = {Login} />
+          {/* <Route path = '/login' component = {Login} /> */}
           <Route path = '/register' component = {Register} />
           <Route path = '/upload' > {user ? <Upload/> : <Upload/> }  </Route>
 
