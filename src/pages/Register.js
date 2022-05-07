@@ -6,6 +6,8 @@ import axios from "axios";
 import bcrypt from 'bcryptjs'
 //import { Context } from "../context/Context"
 
+//THIS SECTION HAS BEEN ABSTRACTED BY AUTH0 MODULE COULD BE USED IN THE FUTURE
+
 
 export default function Register() {
     const userRef = useRef();

@@ -8,7 +8,7 @@ import {GrPlayFill} from 'react-icons/gr'
 import {GrPauseFill} from 'react-icons/gr'
 import {SongList} from './SongList'
 import axios from 'axios';
-import {Wave} from "@foobar404/wave";
+
 
 //includes audioplayer functionality and all songs that are necessary to load
 
@@ -85,13 +85,13 @@ export function AudioPlayer(props) {
     }
 
 
-    const waveStart = () => {
-        let audioElement = SongList[currentSongIndex].src;
-        let canvasElement = document.getElementsByClassName('canvas');
-        const ctx = canvasElement[0].getContext('2d'); 
-        console.log(ctx)
-        let wave = new Wave(audioElement, ctx);
-    }
+    // const waveStart = () => {
+    //     let audioElement = SongList[currentSongIndex].src;
+    //     let canvasElement = document.getElementsByClassName('canvas');
+    //     const ctx = canvasElement[0].getContext('2d'); 
+    //     console.log(ctx)
+    //     let wave = new Wave(audioElement, ctx);
+    // }
     
 
     

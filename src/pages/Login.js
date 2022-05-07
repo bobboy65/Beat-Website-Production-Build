@@ -7,6 +7,8 @@ import PropTypes from 'prop-types'
 import useToken from '../useToken'
 
 
+//THIS SECTION HAS BEEN ABSTRACTED BY AUTH0 COULD BE A MODULE USED IN THE FUTURE
+
 
 
 export default function Login() {

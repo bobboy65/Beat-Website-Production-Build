@@ -45,7 +45,7 @@ function Navbar() {
                         
 
                         <a href='/' className= {click ? 'whitetlname' : 'tlname'} >
-                         Beats by "Producer Name Here" 
+                         Next Day Beats Exclusives
                           </a>
                         <a  className ={click ? 'BurgerChange' : 'BurgerMenu'} onClick={handleClick} >
                             { click ? <GoX/> : <GiHamburgerMenu/> }

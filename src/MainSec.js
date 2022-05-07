@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './MainSec.css';  
 import axios from "axios"
-
+import { ImNext } from 'react-icons/im';
 
 function MainSec () {
     const [posts, setPosts] = useState([]);
@@ -14,12 +14,27 @@ function MainSec () {
     //     }
     //     fetchPosts();
     // },[])
-    
 
+    // const getLoginAuth = async () => {
+    //     try { 
+    //         const res = await axios.get('http://localhost:8080', {
+    //     }).catch((error) => {
+    //         console.error(error)
+    //     });
+    //         console.log(res.data)
+    //     }
+    //     catch (err) { 
+    //         console.log(err)
+    //     }
+        
+    // }
+
+
+    //href = 'http://localhost:8080'
     return (
         <>
             <div className = 'backsplash'>
-                <a href = '/login' className = "login" >
+                <a className = "login"   >
                     Sign in
                 </a>  
                     {/* <img 
