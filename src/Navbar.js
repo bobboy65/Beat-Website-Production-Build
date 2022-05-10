@@ -47,9 +47,11 @@ function Navbar() {
                         <a href='/' className= {click ? 'whitetlname' : 'tlname'} >
                          Next Day Beats Exclusives
                           </a>
+                        
                         <a  className ={click ? 'BurgerChange' : 'BurgerMenu'} onClick={handleClick} >
                             { click ? <GoX/> : <GiHamburgerMenu/> }
                         </a>  
+
 
                         {/* <a className ={click ? 'BurgerChange' : 'BurgerMenu'} onClick={handleClick} >
                              { click ? <GoX/> : <GiHamburgerMenu/> }

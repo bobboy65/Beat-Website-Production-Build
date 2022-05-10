@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './MainSec.css';  
 import axios from "axios"
 import { ImNext } from 'react-icons/im';
+import {GiCircle} from 'react-icons/gi' 
+import {FaUserAlt} from 'react-icons/fa'
+
+
 
 function MainSec () {
     const [posts, setPosts] = useState([]);
@@ -34,8 +38,13 @@ function MainSec () {
     return (
         <>
             <div className = 'backsplash'>
-                <a className = "login"   >
-                    Sign in
+                <a className = "login" href = 'http://localhost:8080' > 
+                    <GiCircle color = {'#8A8A8A'} stroke-width = {5} size = {45} textAnchor="middle" alignmentBaseline="middle"  />
+                    <FaUserAlt size = {25} color = {'#8A8A8A'}
+                        textAnchor="middle"
+                        alignmentBaseline="middle"
+                        style={{ position: 'absolute', left: '.7em', bottom: '.75em', zIndex: '-1' }}   
+                    />
                 </a>  
                     {/* <img 
                     className = 'purplebeach'
