@@ -12,9 +12,9 @@
     z-index: 6;
     font-family: "Univers LT W01_67 Bold_1476016",Helvetica,Arial,sans-serif;
   }
-  a:hover {
+  /* a:hover {
   color: rgb(255, 65, 255);
-  }
+  } */
 
   .whitetlname:hover {
     color: var(--main-color);

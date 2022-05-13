@@ -1,11 +1,10 @@
 import { useState } from 'react';
-//Non-auth0 solution for requesting a token using HTTPS POST request
-//Uses bcrypt.compareSync and S3 to verify identity and start a session
+//Auth0 solution in the works
 
 export default function useToken() {
   const getToken = () => {
     const tokenString = sessionStorage.getItem('token');
-    //original had JSON.parse(tokenString)
+  
     const userToken = tokenString
     return userToken?.token
   };
