@@ -21,10 +21,10 @@ import Context from './context/Context'
 
 function App() {
   const { user } = false; //sub out for use context
-  const { token , setToken } = useToken(); //will be our authorization we change pages on
+  //const { token , setToken } = useToken(); //will be our authorization we change pages on
   
-  if(!token) {
-    <Route path = '/login' component = {Login} setToken = {setToken} />
+  if(false) {
+    <Route path = '/login' component = {Login} />
   }
   return (
     <>

@@ -1,25 +1,35 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from "axios";
 //Auth0 solution in the works
 
-export default function useToken() {
-  const getToken = () => {
-    const tokenString = sessionStorage.getItem('token');
-  
-    const userToken = tokenString
-    return userToken?.token
-  };
+//use Token does NOT use a JWT, but uses a combination of 
+//NODE JS / AUTH0 "proprietary" routing techniques
 
-  const [token, setToken] = useState(getToken());
+export const useToken = () => {
+  //const [token, setToken] = useState();
 
-  const saveToken = userToken => {
-    sessionStorage.setItem('token', JSON.stringify(userToken));
-    setToken(userToken.token);
-  };
+const getToken = async () => {
+  const PF = "http://localhost:8080/profile"
+    try {
+      const res = await axios.get(PF, {
+        mode: 'cors',
+        headers: {'Access-Control-Allow-Origin': true}
+      
+      });
+      const userToken = res.data
+      console.log({userToken})
+      //setToken("benis");
+      } catch (err) {
+          console.error(err)
+      }
 
-  //returns an object that cointains the token and saveToken
-  //set to the setToken property name
-  return {
-    setToken: saveToken,
-    token
-  }
+}
+getToken();
+
+
+}
+
+export default {
+  useToken
+  //, otherfunction if needed in the future
 }

@@ -4,6 +4,7 @@ import './MainSec.css';
 import {FaUserCircle} from 'react-icons/fa'
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {useToken} from "./useToken"
 
 
 function MainSec () {
@@ -56,7 +57,8 @@ function MainSec () {
                             </a>
                         </div>
                     </div>
-
+                    <a onClick = {useToken}>lol </a>
+                    {console.log('benis')}
                 </div>  
             </div>
         </>

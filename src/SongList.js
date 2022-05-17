@@ -41,14 +41,7 @@ export const SongList = [
     mood: "Rebellious",
     time: "4:02"
     }        ,
-    {
-    title: "Orbit",
-    artist: "Toni",
-    img_src: "../images/orbit.jpg",
-    src: "../beats/orbitprod.mp3",
-    mood: "Inspiring",
-    time: "2:55"
-    },
+
     {
         title: "42 Dugg",
         artist: "Toni",
@@ -98,30 +91,7 @@ export const SongList = [
     mood: "Inspiring",
     time: "3:07"
     },
-    {
-    title: "Get it",
-    artist: "Toni",
-    img_src: "../images/get.jpg",
-    src: "../beats/Get.mp3",
-    mood: "Inspiring",
-    time: "3:06"
-    },
-    {
-    title: "Void",
-    artist: "Toni",
-    img_src: "../images/void.jpeg",
-    src: "../beats/void prod.mp3",
-    mood: "Gloomy",
-    time: "3:05"
-    }        ,
-    {
-    title: "Reagan Era",
-    artist: "Toni",
-    img_src: "../images/ronaldreagan.jpeg",
-    src: "../beats/ronald reagan prod.mp3",
-    mood: "Sad",
-    time: "4:02"
-    }        ,
+
     {
     title: "You Ain't Ever",
     artist: "Toni",
