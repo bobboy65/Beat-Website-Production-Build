@@ -5,10 +5,12 @@ import {FaUserCircle} from 'react-icons/fa'
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {useToken} from "./useToken"
+import axios from "axios"
+import { useLocation } from 'react-router-dom';
 
 
 function MainSec () {
-    const [posts, setPosts] = useState([]);
+    const [token, setToken] = useState(null);
 
 // Dropdown Menu
 
@@ -34,6 +36,21 @@ function MainSec () {
         profileDropDown();
     },[])
 
+    let location = useLocation();
+    const substring = '2b$10$'
+    useEffect(() => {
+        console.log(location)
+        if(window.location.href.indexOf(substring) != -1){
+            var status = true
+            setToken(location.pathname);
+            console.log(status)
+        }
+        else{
+            setToken(null)
+        }
+    },[location]);
+    console.log(token)
+
     //href = 'http://localhost:8080'
     return (
         <>
@@ -57,8 +74,8 @@ function MainSec () {
                             </a>
                         </div>
                     </div>
-                    <a onClick = {useToken}>lol </a>
-                    {console.log('benis')}
+                    {/* <a onClick = {useToken}>lol </a>
+                    {console.log('benis')} */}
                 </div>  
             </div>
         </>

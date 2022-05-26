@@ -1,5 +1,6 @@
 import React, {useState, useRef, useEffect, useMemo} from 'react'
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import './Audioplayer.css';
 import {IoMdSkipBackward} from 'react-icons/io'
@@ -8,7 +9,6 @@ import {GrPlayFill} from 'react-icons/gr'
 import {GrPauseFill} from 'react-icons/gr'
 import {SongList} from './SongList'
 import axios from 'axios';
-
 
 //includes audioplayer functionality and all songs that are necessary to load
 
@@ -223,6 +223,7 @@ function URLChecker() {
     }
 }
 
+let location = useLocation();
 useEffect(() => { //function checks everytime we want to see if we want to go to the next song, or navigated pages to un-render audioplayer
     if ( calculateTime(currentTime) === calculateTime(duration)) {
         SkipSong(true);  
@@ -232,7 +233,7 @@ useEffect(() => { //function checks everytime we want to see if we want to go to
         }
     }
    //current is referencing current item in our reference, max is a built in property on our input range
-}, [duration]);
+}, [location]);
     
 
     return (

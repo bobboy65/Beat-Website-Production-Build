@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import './Navbar.css';
 
 import { GiAnt } from "react-icons/gi";
@@ -75,13 +75,14 @@ function Navbar() {
                           </a>
                           </Link>
 
-                          <Link to = "/beats">
+                          <Link to = "/beats" >
                           <a className={click ? 'Beatpage' : 'Not-Beatpage' } onClick={handleClick} >
                               Beats 
                           </a>
                           </Link>
 
-                          <Link to = "/upload">
+                         
+                         <Link to = "/upload" >
                           <a className={click ? 'Upload' : 'Not-Upload' } onClick={handleClick} >
                               Upload
                               <br/> 

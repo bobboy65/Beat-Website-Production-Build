@@ -17,22 +17,7 @@ export const getNewSong = async () => {
 
 
 export const SongList = [
-    {
-        title: "The Funk",
-        artist: "Toni",
-        img_src: "../images/fire.jpg",
-        src: "../beats/the funk prod.mp3",
-        mood: "Relaxed",
-        time: "2:12"
-    },
-    {
-    title: "Rolex no Patek",
-    artist: "Toni",
-    img_src: "../images/rolex no patek.jpeg",
-    src: "../beats/Rolex no Patek.mp3",
-    mood: "Accomplished",
-    time: "2:38"
-    }        ,
+
     {
     title: "Table for Humina",
     artist: "Toni",
@@ -57,14 +42,6 @@ export const SongList = [
     src: "../beats/trapavelliprod1.mp3",
     mood: "Enraged",
     time: "2:24"
-    },
-    {
-    title: "Let it Go",
-    artist: "Toni",
-    img_src: "../images/purplebeach.jpg",
-    src: "../beats/let it go prod.mp3",
-    mood: "Intense",
-    time: "2:33"
     },
     {
         title: "Mimosa",  

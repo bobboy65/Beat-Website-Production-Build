@@ -37,7 +37,7 @@ function App() {
           <Route path = '/songs' > {user ? <Songs/> : <Register/> }  </Route> 
           {/* <Route path = '/login' component = {Login} /> */}
           <Route path = '/register' component = {Register} />
-          <Route path = '/upload' > {user ? <Upload/> : <Upload/> }  </Route>
+          <Route path = '/upload' component = {Upload} />
 
           {/* <Route path='/pricing' component = {Pricing} /> */}   
             
