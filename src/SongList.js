@@ -28,14 +28,6 @@ export const SongList = [
     }        ,
 
     {
-        title: "42 Dugg",
-        artist: "Toni",
-        img_src: "../images/piano.jfif",
-        src: "../beats/dugg.mp3",
-        mood: "Eccentric",
-        time: "3:58"
-        },
-    {
     title: "Trapavelli",
     artist: "Toni",
     img_src: "../images/ig88.jfif",

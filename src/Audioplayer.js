@@ -124,6 +124,7 @@ export function AudioPlayer(props) {
         }
         else { 
             audioPlayer.current.play();
+            //SkipSong();
             //catchError(); 
             //audioPlayer.current.pause();
         }
@@ -233,7 +234,7 @@ useEffect(() => { //function checks everytime we want to see if we want to go to
         }
     }
    //current is referencing current item in our reference, max is a built in property on our input range
-}, [location]);
+}, [location, currentTime]);
     
 
     return (

@@ -39,11 +39,9 @@ function MainSec () {
     let location = useLocation();
     const substring = '2b$10$'
     useEffect(() => {
-        console.log(location)
         if(window.location.href.indexOf(substring) != -1){
-            var status = true
             setToken(location.pathname);
-            console.log(status)
+
         }
         else{
             setToken(null)
@@ -71,6 +69,9 @@ function MainSec () {
                             </a>
                             <a href = 'http://localhost:8080/signin' >
                             <span>Sign in</span>
+                            </a>
+                            <a href = 'http://localhost:8080/logout' >
+                            <span>Logout</span>
                             </a>
                         </div>
                     </div>
