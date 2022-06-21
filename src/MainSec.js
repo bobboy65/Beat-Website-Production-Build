@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {useToken} from "./useToken"
 import axios from "axios"
 import { useLocation } from 'react-router-dom';
-
+axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
 
 function MainSec () {
     const [token, setToken] = useState(null);
@@ -36,18 +36,19 @@ function MainSec () {
         profileDropDown();
     },[])
 
-    let location = useLocation();
-    const substring = '2b$10$'
-    useEffect(() => {
-        if(window.location.href.indexOf(substring) != -1){
-            setToken(location.pathname);
+    const makeRequest = (status) => {
+        let type = status;
+        let fail = `http://localhost:8080/${type}`
+        
+        axios.get('http://localhost:8080/signin')
+            .then(res => {
+                console.log(res);
+                console.log(res.data);
+            })
+    }
 
-        }
-        else{
-            setToken(null)
-        }
-    },[location]);
-    console.log(token)
+    let location = useLocation();
+
 
     //href = 'http://localhost:8080'
     return (
@@ -64,10 +65,10 @@ function MainSec () {
                         <input type="checkbox" id="openDropdown" hidden>
                         </input>
                         <div class="dropdown-menu">
-                            <a href = 'http://localhost:8080/signup' >
-                            <span>Sign up</span>
-                            </a>
-                            <a href = 'http://localhost:8080/signin' >
+                            <div href = "javascript:void(0);" onClick = {makeRequest("signup")}>
+                            <span >Sign up</span>
+                            </div>
+                            <a href = "http://localhost:8080/signin" >
                             <span>Sign in</span>
                             </a>
                             <a href = 'http://localhost:8080/logout' >
