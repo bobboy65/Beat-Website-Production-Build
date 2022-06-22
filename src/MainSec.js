@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {useToken} from "./useToken"
 import axios from "axios"
 import { useLocation } from 'react-router-dom';
-axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
 
 function MainSec () {
     const [token, setToken] = useState(null);
@@ -36,20 +35,58 @@ function MainSec () {
         profileDropDown();
     },[])
 
-    const makeRequest = (status) => {
-        let type = status;
-        let fail = `http://localhost:8080/${type}`
+    let location = useLocation();
+    let currentURL = window.location.href;
+
+    function URLChecker() {
+    if (currentURL.includes('/profile')) {
+        return true;
+    }
+    else {
+        return false;
+    }
+    }
+    useEffect(()=> {
+        if(URLChecker()){
+            axios.get('http://localhost:8080/profile')
+            .then(res => {
+                console.log(res)
+            })
+
+        }
+        else {console.log("error callback isn't available because you aren't logged in")}
         
-        axios.get('http://localhost:8080/signin')
+    },[location])
+
+    //axios.defaults.baseURL = 'https://nextdaybeats.com';
+    //axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
+    const makeRequest = (status) => {
+        
+        let type = status;
+  axios.defaults.headers.post['Access-Control-Allow-Origin'] = 'http://localhost:3000';
+        let fail = `http://localhost:8080/${type}`
+        //console.log(fail)
+        axios.get('http://localhost:8080/signup')
             .then(res => {
                 console.log(res);
                 console.log(res.data);
             })
     }
 
-    let location = useLocation();
+    const makeRequest2 = (status) => {
+    const response = fetch("http://localhost8080/signin", {
+    method: "GET",
+    mode: "cors",
+    headers: {
+        Authorization: `Bearer: ${token}`,
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify(response),
 
+});
+console.log(response.json());
 
+    }
     //href = 'http://localhost:8080'
     return (
         <>
@@ -65,9 +102,10 @@ function MainSec () {
                         <input type="checkbox" id="openDropdown" hidden>
                         </input>
                         <div class="dropdown-menu">
-                            <div href = "javascript:void(0);" onClick = {makeRequest("signup")}>
+                            {/* <button onClick = {()=> { makeRequest('signup') }} > */}
+                            <a href = "http://localhost:8080/signup">
                             <span >Sign up</span>
-                            </div>
+                            </a>
                             <a href = "http://localhost:8080/signin" >
                             <span>Sign in</span>
                             </a>
