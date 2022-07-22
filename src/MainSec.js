@@ -39,7 +39,7 @@ function MainSec () {
     let currentURL = window.location.href;
 
     function URLChecker() {
-    if (currentURL.includes('/profile')) {
+    if (location.pathname == '/profile') {
         return true;
     }
     else {
@@ -47,17 +47,18 @@ function MainSec () {
     }
     }
     useEffect(()=> {
+        console.log(URLChecker());
         if(URLChecker()){
-            axios.get('http://localhost:8080/profile')
+            axios.get('http://localhost:8080/profileFetch')
             .then(res => {
                 console.log(res)
+                console.log("benis")
             })
 
         }
         else {console.log("error callback isn't available because you aren't logged in")}
         
     },[location])
-
     //axios.defaults.baseURL = 'https://nextdaybeats.com';
     //axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
     const makeRequest = (status) => {
@@ -72,7 +73,6 @@ function MainSec () {
                 console.log(res.data);
             })
     }
-
     const makeRequest2 = (status) => {
     const response = fetch("http://localhost8080/signin", {
     method: "GET",
@@ -98,7 +98,6 @@ console.log(response.json());
                         <FaUserCircle class = "userCircle" size = {30}  />
                             <i className="fa fa-angle-down"></i>
                         </label>
-                        
                         <input type="checkbox" id="openDropdown" hidden>
                         </input>
                         <div class="dropdown-menu">
@@ -109,11 +108,16 @@ console.log(response.json());
                             <a href = "http://localhost:8080/signin" >
                             <span>Sign in</span>
                             </a>
+                            <a href = 'http://localhost:8080/profile' >
+                            <span>Profile</span>
+                            </a>
                             <a href = 'http://localhost:8080/logout' >
                             <span>Logout</span>
                             </a>
                         </div>
                     </div>
+
+                   
                     {/* <a onClick = {useToken}>lol </a>
                     {console.log('benis')} */}
                 </div>  

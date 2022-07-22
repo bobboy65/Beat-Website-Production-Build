@@ -38,6 +38,7 @@ function App() {
           {/* <Route path = '/login' component = {Login} /> */}
           <Route path = '/register' component = {Register} />
           <Route path = '/upload' component = {Upload} />
+          <Route path = '/profile' component = {Songs} />
 
           {/* <Route path='/pricing' component = {Pricing} /> */}   
             

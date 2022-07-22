@@ -71,19 +71,19 @@ export const SongList = [
     }        ,
 
     {
-    title: "Bopper",
+    title: "Basic",
     artist: "Toni",
     img_src: "../images/boppers.jpeg",
-    src: "../beats/Bopper a minor.mp3",
-    mood: "Epic",
-    time: "1:53"
+    src: "../beats/basic b C#.mp3",
+    mood: "",
+    time: ""
     }        ,
     
     {
-    title: "Golden Corral",
+    title: "Beach Peach",
     artist: "Toni",
     img_src: "../images/corral.jpeg",
-    src: "../beats/Corral Prod.mp3",
+    src: "../beats/beach peach 146 a minor.mp3",
     mood: "Confident",
     time: "2:54"
     }        ,
@@ -96,12 +96,12 @@ export const SongList = [
     time: "4:24"
     }        ,
     {
-    title: "Swim",
+    title: "Beneath the Waves",
     artist: "Toni",
     img_src: "../images/swim.jpeg",
-    src: "../beats/Swim Prod.mp3",
-    mood: "Lonely",
-    time: "3:10"
+    src: "../beats/beneath the waves freestyle.mp3",
+    mood: "",
+    time: ""
     }        ,
     {
     title: "Scamalot",
@@ -120,13 +120,55 @@ export const SongList = [
     time: "2:32"
     },
     {
-        title: "24karat",
+        title: "el Bandito",
         artist: "Toni",
         img_src: "../images/24karat.jpeg",
-        src: "../beats/24karat prod.mp3",
-        mood: "Hyper",
-        time: "2:31"
-        }     
+        src: "../beats/el bandito f.mp3",
+        mood: "",
+        time: ""
+        },
+        
+    {
+    title: "Jacko",
+    artist: "Toni",
+    //img_src: "../images/",
+    src: "../beats/jacko C#.mp3",
+    mood: "",
+    time: ""
+    } ,
+    {
+        title: "Mountain Tones",
+        artist: "Toni",
+        //img_src: "../images/humina.jpg",
+        src: "../beats/Mountain Tones a minor.mp3",
+        mood: "",
+        time: ""
+        } ,
+{
+    title: "Powa Outage 2",
+    artist: "Toni",
+    //img_src: "../images/humina.jpg",
+    src: "../beats/Powa Outage 2 G.mp3",
+    mood: "",
+    time: ""
+    } ,
+    {
+        title: "Reach a Round",
+        artist: "Toni",
+        //img_src: "../images/humina.jpg",
+        src: "../beats/ReachAround f.mp3",
+        mood: "",
+        time: ""
+        } ,
+        {
+            title: "Revolution Trap",
+            artist: "Toni",
+         //   img_src: "../images/humina.jpg",
+            src: "../beats/Revolution Trap freestyle.mp3",
+            mood: "",
+            time: ""
+            }             
+                
 ]
 
 export default {
