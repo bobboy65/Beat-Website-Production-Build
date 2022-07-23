@@ -40,6 +40,9 @@ function MainSec () {
 
     function URLChecker() {
     if (location.pathname == '/profile') {
+        setTimeout(function(){
+            console.log("Executed after 2 second");
+        }, 2000);
         return true;
     }
     else {
@@ -49,6 +52,9 @@ function MainSec () {
     useEffect(()=> {
         console.log(URLChecker());
         if(URLChecker()){
+            setTimeout(function(){
+                console.log("Executed after 2 second");
+            }, 2000);
             axios.get('http://localhost:8080/profileFetch')
             .then(res => {
                 console.log(res)
