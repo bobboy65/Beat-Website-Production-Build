@@ -39,32 +39,43 @@ function MainSec () {
     let currentURL = window.location.href;
 
     function URLChecker() {
-    if (location.pathname == '/profile') {
-        setTimeout(function(){
-            console.log("Executed after 2 second");
-        }, 2000);
-        return true;
+        // setTimeout(function(){
+        //     console.log("Executed immediately");
+            if (location.pathname.indexOf('/profile') === 0) {
+                //setToken(true);
+                return true;
+            }
     }
-    else {
-        return false;
+    function tokenChanger() {
+        setToken(true);
+        console.log("finally ", token)
     }
-    }
-    useEffect(()=> {
-        console.log(URLChecker());
-        if(URLChecker()){
-            setTimeout(function(){
-                console.log("Executed after 2 second");
-            }, 2000);
-            axios.get('http://localhost:8080/profileFetch')
-            .then(res => {
-                console.log(res)
-                console.log("benis")
-            })
 
+    useEffect(()=> {
+        //console.log("url checker is:" + URLChecker());
+        if(URLChecker() == true){
+            tokenChanger();
+            //const prevValue = true; //grabs state outside so that play button doesn't break from useffect being asyncronous
+            console.log(location)
+            console.log(token);
+            //setToken(prevValue);
+            //let poopies = true;
+            if (token) {
+                console.log("benis");
+            }
+        //    axios.get('http://localhost:8080/profileFetch')
+        //    .then(res => {
+        //        console.log(res)
+        //        console.log("benis")
+        //     }).then(axios.get('http://localhost:8080/dataCallback'))
+        //     .then(res => {
+        //         console.log(res)
+        //         console.log("benis")
+        //    })
+        console.log(token);
         }
-        else {console.log("error callback isn't available because you aren't logged in")}
         
-    },[location])
+    },[URLChecker])
     //axios.defaults.baseURL = 'https://nextdaybeats.com';
     //axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
     const makeRequest = (status) => {
