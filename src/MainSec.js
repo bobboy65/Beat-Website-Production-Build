@@ -55,27 +55,23 @@ function MainSec () {
         //console.log("url checker is:" + URLChecker());
         if(URLChecker() == true){
             tokenChanger();
-            //const prevValue = true; //grabs state outside so that play button doesn't break from useffect being asyncronous
             console.log(location)
             console.log(token);
-            //setToken(prevValue);
-            //let poopies = true;
             if (token) {
                 console.log("benis");
             }
-        //    axios.get('http://localhost:8080/profileFetch')
-        //    .then(res => {
-        //        console.log(res)
-        //        console.log("benis")
-        //     }).then(axios.get('http://localhost:8080/dataCallback'))
-        //     .then(res => {
-        //         console.log(res)
-        //         console.log("benis")
-        //    })
         console.log(token);
-        }
-        
+        axios.get('http://localhost:8080/profile')
+        .then(res => {
+            console.log(res);
+            console.log(res.data);
+        })
+        }  
     },[URLChecker])
+
+    useEffect (() => {
+
+    }, [token])
     //axios.defaults.baseURL = 'https://nextdaybeats.com';
     //axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
     const makeRequest = (status) => {
@@ -84,11 +80,6 @@ function MainSec () {
   axios.defaults.headers.post['Access-Control-Allow-Origin'] = 'http://localhost:3000';
         let fail = `http://localhost:8080/${type}`
         //console.log(fail)
-        axios.get('http://localhost:8080/signup')
-            .then(res => {
-                console.log(res);
-                console.log(res.data);
-            })
     }
     const makeRequest2 = (status) => {
     const response = fetch("http://localhost8080/signin", {
